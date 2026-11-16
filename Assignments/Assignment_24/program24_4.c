@@ -1,0 +1,61 @@
+/*4.Write a program which accept string from user and accept one character.
+Return index of last occurrence of that character.
+
+Input: Marvellous Multi OS
+       : M
+Output: 11
+
+Input: Marvellous Multi OS
+       : w
+Output: -1
+
+
+Input: Marvellous Multi OS
+       : e
+Output: 4
+*/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int CountChar(char *str, char ch)
+{
+    int index = 0;
+    int iLastIndex = 0;
+
+    iLastIndex = -1;   //if Letter in not in given string then it give -1 .that why here initalized with -1
+
+    while(str[index] != '\0')
+    {
+        
+        if(str[index] == ch) 
+        {
+            iLastIndex = index;
+            
+        }
+        
+        index++; 
+    }
+
+    return iLastIndex;
+}
+
+int main()
+{
+    char arr[200]={'\0'};
+    char cValue ='\0';
+    int iRet = 0;
+
+    printf("Enter String: \n");
+    scanf("%[^'\n']s",arr);
+
+    printf("Enter the Character: \n");
+    scanf(" %c",&cValue);
+
+    iRet =CountChar(arr,cValue);
+   
+    printf("Character frequency is : %d ",iRet);
+    
+    return EXIT_SUCCESS;
+}
